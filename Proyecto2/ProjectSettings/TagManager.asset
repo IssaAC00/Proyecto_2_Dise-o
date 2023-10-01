@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Suelo
+    uniqueID: 2233518039
+    locked: 0
+  - name: Paredes
+    uniqueID: 2335002065
+    locked: 0
+  - name: Muebles
+    uniqueID: 1341397787
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
