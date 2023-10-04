@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 035bcd4102ea84a499a294f5f2e94fc3
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/KidsRoom.unity
     guid: 09c1e81a951036740803b69d367ee273
+  - enabled: 1
+    path: Assets/Scenes/Kitchen.unity
+    guid: f1586e0d3bba7a5459cd5f3ac46db34a
   m_configObjects: {}
