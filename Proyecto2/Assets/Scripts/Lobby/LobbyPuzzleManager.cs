@@ -7,13 +7,19 @@ public class LobbyPuzzleManager : MonoBehaviour
 {
   [SerializeField]
   private Transform gameTransform;
+
   [SerializeField]
   private Transform piecePrefab;
+
+  [SerializeField]
+  private GameObject levelChanger;
   private int emptyLocation;
   public int size = 3;
   private List<Transform> pieces;
   private bool playing;
   private LobbyAudioManager lam;
+  [SerializeField]
+  private SceneInfo sceneInfo;
 
   // Crea las piezas del puzzle a partir de una imagen
   // La hace cuadricula
@@ -107,8 +113,9 @@ public class LobbyPuzzleManager : MonoBehaviour
     }
   }
 
-  private bool CheckCompletion()
+  private void CheckCompletion()
   {
+    bool completed = true;
     // Examina todas las piezas
     for (int i = 0; i < pieces.Count; i++)
     {
@@ -117,15 +124,19 @@ public class LobbyPuzzleManager : MonoBehaviour
       // Se ha ordenado (completado) el puzzle
       if (pieces[i].name != $"{i}")
       {
-        return false;
+        completed = false;
       }
     }
-    GameObject bgMusic = GameObject.Find("BG_Music");
-    Destroy(bgMusic);
-    lam.PlayFinish();
-    Debug.Log("CONSEGUIDO!");
-    playing = false;
-    return true;
+    if (completed)
+    {
+      GameObject bgMusic = GameObject.Find("BG_Music");
+      Destroy(bgMusic);
+      lam.PlayFinish();
+      playing = false;
+      sceneInfo.LobbyPuzzleCompleted = true;
+      Invoke("ActivateFade", 4.0f);
+      Invoke("LoadLobbyScene", 5.0f);
+    }
   }
 
   // Start is called before the first frame update
@@ -164,7 +175,16 @@ public class LobbyPuzzleManager : MonoBehaviour
         }
       }
     }
+  }
 
+  private void LoadLobbyScene()
+  {
+    SceneManager.LoadScene("Lobby");
+  }
+
+  private void ActivateFade()
+  {
+    levelChanger.GetComponent<LevelChanger>().FadeToLevel();
   }
 
 }
