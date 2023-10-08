@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -9,11 +8,15 @@ public class PlayerInteract : MonoBehaviour
   private SceneInfo sceneInfo;
 
   [SerializeField]
-  private GameObject levelChanger;
+  private Canvas LetterCanvas;
+
+  [SerializeField]
+  private AudioSource audioSource;
 
   private void Start()
   {
     transform.position = sceneInfo.PlayerLobbyPos;
+    LetterCanvas.enabled = false;
   }
   private void Update()
   {
@@ -36,16 +39,11 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
+          audioSource.Play();
           sceneInfo.PlayerLobbyPos = transform.position;
-          levelChanger.GetComponent<LevelChanger>().FadeToLevel();
-          Invoke("ChangeScene", 1.1f);
+          LetterCanvas.enabled = true;
         }
       }
     }
-  }
-  
-  private void ChangeScene()
-  {
-    SceneManager.LoadScene("LobbyPuzzle");
   }
 }
