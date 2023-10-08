@@ -19,5 +19,14 @@ public class SceneInfo : ScriptableObject
     get { return lobbyPuzzleCompleted; }
     set { lobbyPuzzleCompleted = value; }
   }
+
+  [SerializeField]
+  private bool lobbyLetterRead;
+  public bool LobbyLetterRead
+  {
+    get { return lobbyLetterRead; }
+    set { lobbyLetterRead = value; }
+  }
+  
   
 }
