@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Build.Content;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
@@ -130,11 +131,13 @@ public class GameManager1 : MonoBehaviour
     }
     public void GotoBtnClick()
     {
+        SceneManager.LoadScene("Kitchen");
         print("next click");
     }
 
     public void RetryBtnClick()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         print("retry click");
     }
 
