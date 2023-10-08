@@ -7,12 +7,19 @@ public class LobbyPuzzleManager : MonoBehaviour
 {
   [SerializeField]
   private Transform gameTransform;
+
   [SerializeField]
   private Transform piecePrefab;
+
+  [SerializeField]
+  private GameObject levelChanger;
   private int emptyLocation;
   public int size = 3;
   private List<Transform> pieces;
   private bool playing;
+  private LobbyAudioManager lam;
+  [SerializeField]
+  private SceneInfo sceneInfo;
 
   // Crea las piezas del puzzle a partir de una imagen
   // La hace cuadricula
@@ -75,15 +82,6 @@ public class LobbyPuzzleManager : MonoBehaviour
     return false;
   }
 
-/*
-  private IEnumerator WaitShuffle(float duration)
-  {
-    yield return new WaitForSeconds(duration);
-    Shuffle();
-    shuffling = false;
-  }
-*/
-
   private void Shuffle()
   {
     int count = 0;
@@ -115,22 +113,37 @@ public class LobbyPuzzleManager : MonoBehaviour
     }
   }
 
-  private bool CheckCompletion()
+  private void CheckCompletion()
   {
+    bool completed = true;
+    // Examina todas las piezas
     for (int i = 0; i < pieces.Count; i++)
     {
+      // Si una pieza en la lista no tiene de nombre el numero
+      // Correspondiente a su posicion en lista, es porque no
+      // Se ha ordenado (completado) el puzzle
       if (pieces[i].name != $"{i}")
       {
-        return false;
+        completed = false;
       }
     }
-    return true;
+    if (completed)
+    {
+      GameObject bgMusic = GameObject.Find("BG_Music");
+      Destroy(bgMusic);
+      lam.PlayFinish();
+      playing = false;
+      sceneInfo.LobbyPuzzleCompleted = true;
+      Invoke("ActivateFade", 4.0f);
+      Invoke("LoadLobbyScene", 5.0f);
+    }
   }
 
   // Start is called before the first frame update
   void Start()
   {
     pieces = new List<Transform>();
+    lam = FindObjectOfType<LobbyAudioManager>();
     CreateGamePieces(0.01f);
     Shuffle();
     playing = true;
@@ -139,22 +152,13 @@ public class LobbyPuzzleManager : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    /*
-    // Check for completion
-    if (!shuffling && CheckCompletion())
+    if (playing)
     {
-      shuffling = true;
-      StartCoroutine(WaitShuffle(0.5f));
-    }
-    */
-    if (playing && CheckCompletion())
-    {
-      Debug.Log("CONSEGUIDO!");
-      playing = false;
+      CheckCompletion();
     }
 
 
-    if (Input.GetMouseButtonDown(0))
+    if (Input.GetMouseButtonDown(0) && playing)
     {
       RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
       if (hit)
@@ -163,15 +167,24 @@ public class LobbyPuzzleManager : MonoBehaviour
         {
           if (pieces[i] == hit.transform)
           {
-            if (SwapIfValid(i, -size, size)) { break; }
-            if (SwapIfValid(i, size, size)) { break; }
-            if (SwapIfValid(i, -1, 0)) { break; }
-            if (SwapIfValid(i, +1, size - 1)) { break; }
+            if (SwapIfValid(i, -size, size)) { lam.PlayMove(); break; }
+            if (SwapIfValid(i, size, size)) { lam.PlayMove(); break; }
+            if (SwapIfValid(i, -1, 0)) { lam.PlayMove(); break; }
+            if (SwapIfValid(i, +1, size - 1)) { lam.PlayMove(); break; }
           }
         }
       }
     }
+  }
 
+  private void LoadLobbyScene()
+  {
+    SceneManager.LoadScene("Lobby");
+  }
+
+  private void ActivateFade()
+  {
+    levelChanger.GetComponent<LevelChanger>().FadeToLevel();
   }
 
 }
