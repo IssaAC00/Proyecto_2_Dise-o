@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c856227c13d8ab44969a22a0579b1e9, type: 3}
   m_Name: SceneInfo
   m_EditorClassIdentifier: 
-  lobbyPuzzleCompleted: 0
+  lobbyPuzzleCompleted: 1
   lobbyLetterRead: 0
