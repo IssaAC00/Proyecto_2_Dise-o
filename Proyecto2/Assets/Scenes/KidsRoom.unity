@@ -1708,6 +1708,14 @@ PrefabInstance:
       propertyPath: carta
       value: 
       objectReference: {fileID: 1930644074}
+    - target: {fileID: 6518629081157130317, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 446707152}
+    - target: {fileID: 6518629081157130317, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6878497472279427175, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -1756,6 +1764,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1312590956836141232, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 446707159}
     - targetCorrespondingSourceObject: {fileID: 1312590956836141232, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
       insertIndex: -1
       addedObject: {fileID: 446707151}
@@ -1947,6 +1958,24 @@ MonoBehaviour:
   sceneInfo: {fileID: 11400000, guid: 3ad30b441bd7d8b43964c1013f63dd45, type: 2}
   LetterCanvas: {fileID: 1930644074}
   levelChanger: {fileID: 280198863}
+--- !u!95 &446707152 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5542612185971244327, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
+  m_PrefabInstance: {fileID: 264729778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &446707159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446707150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8c0d3432043004a8c5d5e345dac409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &495664024
 GameObject:
   m_ObjectHideFlags: 0

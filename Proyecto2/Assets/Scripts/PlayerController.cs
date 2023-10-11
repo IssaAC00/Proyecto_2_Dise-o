@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
   private Vector2 movementInput;
   private Rigidbody2D rb;
   private List<RaycastHit2D> castCollision = new List<RaycastHit2D>();
+ 
+
 
   [SerializeField]
   private Canvas carta;
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
   void Awake()
   {
     rb = GetComponent<Rigidbody2D>();
+    
   }
 
   // Update is called once per frame
@@ -46,14 +49,16 @@ public class PlayerController : MonoBehaviour
       castCollision,
       movementSpeed * Time.fixedDeltaTime + collisionOffset
     );
-    if (count == 0)
+    if (count == 0 )
     {
+      
       rb.MovePosition(rb.position + direction * movementSpeed * Time.fixedDeltaTime);
       return true;
     }
     else
     {
-      return false;
+           
+            return false;
     }
     
   }
