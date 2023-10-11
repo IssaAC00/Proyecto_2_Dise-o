@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lobbyPuzzleCompleted: 1
   lobbyLetterRead: 0
-  kitchenPuzzleCompleted: 1
-  kidsRoomPuzzleCompleted: 1
+  kitchenPuzzleCompleted: 0
+  kidsRoomPuzzleCompleted: 0
   roomLetterRead: 0

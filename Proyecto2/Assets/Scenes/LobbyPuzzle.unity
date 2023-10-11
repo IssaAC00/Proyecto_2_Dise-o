@@ -575,7 +575,6 @@ MonoBehaviour:
   gameTransform: {fileID: 2122551153}
   piecePrefab: {fileID: 7425973827590120093, guid: 5fcf9e190138e2c4ab137ffeb1690909, type: 3}
   levelChanger: {fileID: 2105100507}
-  size: 2
   sceneInfo: {fileID: 11400000, guid: 3ad30b441bd7d8b43964c1013f63dd45, type: 2}
 --- !u!4 &1999141571
 Transform:
@@ -651,7 +650,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: 22dd676c3487c4c43b203818fa9f54f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b31a3c1598df77e4d958caf48a8429f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
