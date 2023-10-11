@@ -23,4 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: 45f4e45f7b89a2f4e972542e34c05e00
+    path: Assets/Scenes/SlidingKidsRoom.unity
+    guid: d8b8684688b72e24b97227191763dc47
   m_configObjects: {}
