@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Interact
   - puzzleBtn
+  - Pin
+  - Gear
   layers:
   - Default
   - TransparentFX
