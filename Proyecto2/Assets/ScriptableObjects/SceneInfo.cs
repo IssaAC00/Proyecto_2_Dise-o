@@ -34,6 +34,14 @@ public class SceneInfo : ScriptableObject
     get { return playerKitchenPos; }
     set { playerKitchenPos = value; }
   }
+  
+  private Vector2 playerStudioPos;
+  public Vector2 PlayerStudioPos
+  {
+    get { return playerStudioPos; }
+    set { playerStudioPos = value; }
+  }
+  
 
     private Vector2 playeKidsRoomPos;
     public Vector2 PlayeKidsRoomPos
