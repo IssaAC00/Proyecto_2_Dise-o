@@ -11,7 +11,7 @@ public class TilesController : MonoBehaviour
     public int number;
     public bool inRightPlace;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         TragetPosition = transform.position;
         correctPosition = TragetPosition;
