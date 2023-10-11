@@ -11,6 +11,8 @@ public class GameManager1 : MonoBehaviour
 {
     [SerializeField]
     private Sprite bgImage;
+    [SerializeField]
+    private SceneInfo sceneInfo;
     public Sprite[] puzzles;
     public List<Sprite> gamePuzzles = new List<Sprite>();
     public List<Button> btns = new List<Button>();
@@ -126,7 +128,7 @@ public class GameManager1 : MonoBehaviour
         {
             print("Game Finish");
             GameWinPopUp.SetActive(true);
-            print("it took you " + countGuess + "");
+            sceneInfo.KitchenPuzzleCompleted = true;
         }
     }
     public void GotoBtnClick()

@@ -27,8 +27,14 @@ public class SceneInfo : ScriptableObject
     get { return lobbyLetterRead; }
     set { lobbyLetterRead = value; }
   }
-
-  private Vector2 playerKitchenPos;
+    [SerializeField]
+    private bool kitchenPuzzleCompleted = false;
+    public bool KitchenPuzzleCompleted
+    {
+        get { return kitchenPuzzleCompleted; }
+        set { kitchenPuzzleCompleted = value; }
+    }
+    private Vector2 playerKitchenPos;
   public Vector2 PlayerKitchenPos
   {
     get { return playerKitchenPos; }

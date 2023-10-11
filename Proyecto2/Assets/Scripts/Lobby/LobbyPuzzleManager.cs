@@ -14,7 +14,7 @@ public class LobbyPuzzleManager : MonoBehaviour
   [SerializeField]
   private GameObject levelChanger;
   private int emptyLocation;
-  public int size = 3;
+  private int size = 3;
   private List<Transform> pieces;
   private bool playing;
   private LobbyAudioManager lam;
