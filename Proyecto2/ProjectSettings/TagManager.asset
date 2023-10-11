@@ -8,6 +8,8 @@ TagManager:
   - puzzleBtn
   - Pin
   - Gear
+  - Nota
+  - Carta
   layers:
   - Default
   - TransparentFX

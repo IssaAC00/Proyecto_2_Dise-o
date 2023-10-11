@@ -11,7 +11,10 @@ public class PlayerController : MonoBehaviour
   private Vector2 movementInput;
   private Rigidbody2D rb;
   private List<RaycastHit2D> castCollision = new List<RaycastHit2D>();
-  // Start is called before the first frame update
+
+  [SerializeField]
+  private Canvas carta;
+  
   void Awake()
   {
     rb = GetComponent<Rigidbody2D>();
@@ -20,8 +23,8 @@ public class PlayerController : MonoBehaviour
   // Update is called once per frame
   void FixedUpdate()
   {
-    // if no input: IDLE
-    if (movementInput != Vector2.zero)
+    // if no input: IDLE = Vector2.zero
+    if (movementInput != Vector2.zero && carta.enabled == false)
     {
       bool success = TryMove(movementInput);
       if (!success)

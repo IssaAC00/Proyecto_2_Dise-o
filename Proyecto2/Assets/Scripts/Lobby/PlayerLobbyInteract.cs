@@ -20,7 +20,7 @@ public class PlayerInteract : MonoBehaviour
   }
   private void Update()
   {
-    if (Input.GetKeyDown(KeyCode.E))
+    if (Input.GetKeyDown(KeyCode.E) && !LetterCanvas.enabled)
     {
       InteractAction();
     }
@@ -31,7 +31,7 @@ public class PlayerInteract : MonoBehaviour
     Collider2D[] nearColliders = Physics2D.OverlapCircleAll(transform.position, 1f);
     foreach (Collider2D collider in nearColliders)
     {
-      if (collider.CompareTag("Interact"))
+      if (collider.gameObject.name == "CartaObj")
       {
         if (sceneInfo.LobbyPuzzleCompleted)
         {

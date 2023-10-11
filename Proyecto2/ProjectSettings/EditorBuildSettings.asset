@@ -21,9 +21,8 @@ EditorBuildSettings:
     path: Assets/Scenes/LobbyPuzzle.unity
     guid: ef4b67495aef17143b8b26d0788b9f0c
   - enabled: 1
-    path: Assets/Scenes/Studio.unity
-    guid: a926cbeb423f7d849b3537fdd70af051
-  - enabled: 1
-    path: Assets/Scenes/StudioPuzzle.unity
-    guid: 5c42876723e13724784b3d39b9888a25
+    path: Assets/Scenes/EndScreen.unity
+    guid: 45f4e45f7b89a2f4e972542e34c05e00
+    path: Assets/Scenes/SlidingKidsRoom.unity
+    guid: d8b8684688b72e24b97227191763dc47
   m_configObjects: {}

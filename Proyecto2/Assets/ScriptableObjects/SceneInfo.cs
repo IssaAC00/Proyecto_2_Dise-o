@@ -42,4 +42,28 @@ public class SceneInfo : ScriptableObject
     set { playerStudioPos = value; }
   }
   
+
+    private Vector2 playeKidsRoomPos;
+    public Vector2 PlayeKidsRoomPos
+    {
+        get { return playeKidsRoomPos; }
+        set { playeKidsRoomPos = value; }
+    }
+
+    [SerializeField]
+    private bool kidsRoomPuzzleCompleted = false;
+    public bool KidsRoomPuzzleCompleted
+    {
+        get { return kidsRoomPuzzleCompleted; }
+        set { kidsRoomPuzzleCompleted = value; }
+    }
+
+    [SerializeField]
+    private bool roomLetterRead;
+    public bool RoomLetterReadS
+    {
+        get { return roomLetterRead; }
+        set { roomLetterRead = value; }
+    }
+
 }
