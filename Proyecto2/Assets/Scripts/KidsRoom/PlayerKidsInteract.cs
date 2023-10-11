@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KidsRoomInteract : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class KidsRoomInteract : MonoBehaviour
     private Canvas LetterCanvas;
 
     [SerializeField]
-    private AudioSource audioSource;
+    private GameObject levelChanger;
 
     private void Start()
     {
@@ -31,19 +32,23 @@ public class KidsRoomInteract : MonoBehaviour
         Collider2D[] nearColliders = Physics2D.OverlapCircleAll(transform.position, 1f);
         foreach (Collider2D collider in nearColliders)
         {
-            if (collider.CompareTag("Interact"))
+            if (collider.gameObject.tag == "Carta")
             {
-                if (sceneInfo.KidsRoomPuzzleCompleted)
+                if (sceneInfo.KidsRoomPuzzleCompleted == false)
                 {
-                    Debug.Log("Puzzle de Room completado!");
-                }
-                else
-                {
-                    audioSource.Play();
+                   
+                   
                     sceneInfo.PlayeKidsRoomPos = transform.position;
                     LetterCanvas.enabled = true;
                 }
+                else
+                {
+                    Debug.Log("Puzzle de Room completado!");
+                }
+               
             }
         }
     }
+
+
 }

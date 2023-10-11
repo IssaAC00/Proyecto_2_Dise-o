@@ -269,6 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TragetPosition: {x: 0, y: 0, z: 0}
   number: 1
+  inRightPlace: 0
 --- !u!1 &71081233
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TragetPosition: {x: 0, y: 0, z: 0}
   number: 3
+  inRightPlace: 0
 --- !u!1 &105623980
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TragetPosition: {x: 0, y: 0, z: 0}
   number: 0
+  inRightPlace: 0
 --- !u!1 &448858679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,6 +1296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TragetPosition: {x: 0, y: 0, z: 0}
   number: 6
+  inRightPlace: 0
 --- !u!1 &1145744570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,6 +1527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TragetPosition: {x: 0, y: 0, z: 0}
   number: 2
+  inRightPlace: 0
 --- !u!1 &1585248862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,6 +1644,8 @@ MonoBehaviour:
   - {fileID: 864655721}
   - {fileID: 1941242406}
   - {fileID: 0}
+  sceneInfo: {fileID: 11400000, guid: 3ad30b441bd7d8b43964c1013f63dd45, type: 2}
+  levelChanger: {fileID: 1605350775}
 --- !u!1 &1599428616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1678,68 @@ Transform:
   - {fileID: 1145744571}
   m_Father: {fileID: 41362515}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1605350774
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5341251960003150567, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341251960003150567, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341251960003150567, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341251960003150567, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341251960003150567, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341251960003150567, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341251960003150567, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341251960003150567, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341251960003150567, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341251960003150567, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6002802405341284150, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+      propertyPath: m_Name
+      value: LevelChanger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+--- !u!1 &1605350775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6002802405341284150, guid: 83d927f07ccab5146b743251930a36ab, type: 3}
+  m_PrefabInstance: {fileID: 1605350774}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1619325324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,6 +1886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TragetPosition: {x: 0, y: 0, z: 0}
   number: 5
+  inRightPlace: 0
 --- !u!1 &1743200040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,6 +2117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TragetPosition: {x: 0, y: 0, z: 0}
   number: 4
+  inRightPlace: 0
 --- !u!1 &1776934493
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,6 +2412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TragetPosition: {x: 0, y: 0, z: 0}
   number: 7
+  inRightPlace: 0
 --- !u!1 &2017948439
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,3 +2569,4 @@ SceneRoots:
   - {fileID: 1743200042}
   - {fileID: 535708279}
   - {fileID: 271836265}
+  - {fileID: 1605350774}

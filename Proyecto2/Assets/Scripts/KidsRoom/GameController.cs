@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class GameController : MonoBehaviour
     private Camera _camera;
     [SerializeField] private TilesController[] tiles;
     private int emptySpaceIndex = 8;
+
+    [SerializeField]
+    private SceneInfo sceneInfo;
+
+    [SerializeField]
+    private GameObject levelChanger;
     void Start()
     {
         _camera = Camera.main;
@@ -56,12 +63,22 @@ public class GameController : MonoBehaviour
 
         if (correctTiles == tiles.Length - 1)
         {
-            Debug.Log("Ganaste");
+            sceneInfo.LobbyPuzzleCompleted = true;
+            Invoke("ActivateFade", 4.0f);
+            Invoke("LoadRooomScene", 5.0f);
         }
 
 
     }
 
+    private void LoadRooomScene()
+    {
+        SceneManager.LoadScene("KidsRoom");
+    }
+    private void ActivateFade()
+    {
+        levelChanger.GetComponent<LevelChanger>().FadeToLevel();
+    }
     public void Shuffle()
     {
         if(emptySpaceIndex != 8)
