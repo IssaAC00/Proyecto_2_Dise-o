@@ -7651,6 +7651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1689120615887392314, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
+      propertyPath: carta
+      value: 
+      objectReference: {fileID: 1234389222}
     - target: {fileID: 6518629081157130317, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
       propertyPath: carta
       value: 
