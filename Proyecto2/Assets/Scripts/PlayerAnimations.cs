@@ -11,6 +11,10 @@ public class PlayerAnimations : MonoBehaviour
     private Rigidbody2D playerRB;
     private Vector2 moveInput;
     private Animator animator;
+
+
+    [SerializeField]
+    private Canvas carta;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,7 @@ public class PlayerAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         moveInput = new Vector2(moveX, moveY).normalized;
@@ -31,6 +36,7 @@ public class PlayerAnimations : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(carta.enabled == false)
         playerRB.MovePosition(playerRB.position + moveInput * speed * Time.fixedDeltaTime);
     }
 }

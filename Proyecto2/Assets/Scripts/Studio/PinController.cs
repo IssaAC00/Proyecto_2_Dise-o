@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class PinController : MonoBehaviour
 {
-    public GearController gear {get; set;}
+    public GearController gear { get; set; }
 }

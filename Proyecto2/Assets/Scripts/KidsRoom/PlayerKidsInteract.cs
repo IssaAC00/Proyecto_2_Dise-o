@@ -36,8 +36,8 @@ public class KidsRoomInteract : MonoBehaviour
             {
                 if (sceneInfo.KidsRoomPuzzleCompleted == false)
                 {
-                   
-                   
+
+                    collider.gameObject.GetComponent<AudioSource>().Play();
                     sceneInfo.PlayeKidsRoomPos = transform.position;
                     LetterCanvas.enabled = true;
                 }
@@ -47,7 +47,17 @@ public class KidsRoomInteract : MonoBehaviour
                 }
                
             }
+            if (collider.gameObject.tag == "Puerta")
+            {
+                collider.gameObject.GetComponent<AudioSource>().Play();
+                Invoke("LoadCocina", 1.1f);
+            }
         }
+    }
+
+    private void LoadCocina()
+    {
+        SceneManager.LoadScene("Kitchen");
     }
 
 
