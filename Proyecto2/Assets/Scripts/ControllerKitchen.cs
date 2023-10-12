@@ -9,7 +9,7 @@ public class NewBehaviourScript : MonoBehaviour
     private SceneInfo sceneInfo;
     [SerializeField]
     private Canvas canvas;
-    public string Kitchen;
+
 
     private void Start()
     {

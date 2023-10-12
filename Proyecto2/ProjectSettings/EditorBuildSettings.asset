@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SlidingKidsRoom.unity
     guid: d8b8684688b72e24b97227191763dc47
+  - enabled: 1
+    path: Assets/Scenes/Memory Game.unity
+    guid: b7fe65b128f75704bb7bf52ab74b3529
   m_configObjects: {}
