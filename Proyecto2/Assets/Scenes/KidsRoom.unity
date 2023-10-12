@@ -1702,7 +1702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804770434557243248, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
       propertyPath: m_Size.y
-      value: 2.1733842
+      value: 0.32519013
       objectReference: {fileID: 0}
     - target: {fileID: 804770434557243248, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
       propertyPath: m_Offset.x
@@ -1710,7 +1710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804770434557243248, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
       propertyPath: m_Offset.y
-      value: -0.047524452
+      value: -0.9716215
       objectReference: {fileID: 0}
     - target: {fileID: 1312590956836141232, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
       propertyPath: m_Name
@@ -1746,7 +1746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7933125811886752273, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.58
+      value: -4.82
       objectReference: {fileID: 0}
     - target: {fileID: 7933125811886752273, guid: 44e1a89a0a286a148b60fe8612020117, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1981,20 +1981,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 436572015}
     m_ColliderPaths:
-    - - X: 5000000
+    - - X: 8669980
         Y: 5000000
-      - X: -5000000
+      - X: -8302979
         Y: 5000000
-      - X: -5000000
-        Y: -5000000
-      - X: 5000000
-        Y: -5000000
+      - X: -8302979
+        Y: -11238958
+      - X: 8669980
+        Y: -11238958
   m_CompositePaths:
     m_Paths:
-    - - {x: 0.4999707, y: -0.5}
-      - {x: 0.4999707, y: 0.5}
-      - {x: -0.5, y: 0.4999707}
-      - {x: -0.4999707, y: -0.5}
+    - - {x: 0.8669687, y: -1.1238958}
+      - {x: 0.8669687, y: 0.5}
+      - {x: -0.8302979, y: 0.4999707}
+      - {x: -0.8302686, y: -1.1238958}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -2058,7 +2058,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.018350005, y: -0.31194788}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2069,7 +2069,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6972959, y: 1.6238958}
   m_EdgeRadius: 0
 --- !u!82 &436572016
 AudioSource:
@@ -4420,7 +4420,7 @@ RectTransform:
   m_GameObject: {fileID: 1184576289}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1, y: 2.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1203379693}
