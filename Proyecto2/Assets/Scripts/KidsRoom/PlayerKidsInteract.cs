@@ -47,7 +47,16 @@ public class KidsRoomInteract : MonoBehaviour
                 }
                
             }
+            if (collider.gameObject.tag == "Puerta")
+            {
+                Invoke("LoadCocina", 1.1f);
+            }
         }
+    }
+
+    private void LoadCocina()
+    {
+        SceneManager.LoadScene("Kitchen");
     }
 
 
