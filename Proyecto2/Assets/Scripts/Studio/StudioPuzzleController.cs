@@ -1,40 +1,70 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StudioPuzzleController : MonoBehaviour
 {
-    [SerializeField] private PinController[] pins;
-    [SerializeField] private int[] correctGearTypes;
-    private bool[] correctPins;
+    [Header("Scene Control")]
+    [SerializeField] private LevelChanger levelChanger;
+
+    [Header("Puzzle Settings")]
+    [SerializeField] private PinController[] pinList;
+    [SerializeField] private int[] pinSolutions;
+    [SerializeField] private bool[] pinRotations;
+    private bool correctChain;
+
+    [Header("Gear Animations")]
+    [SerializeField] private Animator endGear;
 
     // Start is called before the first frame update
     void Start()
     {
-        correctPins = new bool[pins.Length];
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < pins.Length; i++)
+        correctChain = true;
+        //Check every pin
+        for (int i = 0; i < pinList.Length; i++)
         {
-            if(pins[i].gear != null && pins[i].gear.GetGearType() == correctGearTypes[i])
-                correctPins[i] = true;
+            GearController connectedGear = pinList[i].gear;
+            if (connectedGear != null && connectedGear.GetGearType() == pinSolutions[i])
+            {
+                if (correctChain)
+                {
+                    connectedGear.Animation_SetConnect(true);
+                    connectedGear.Animation_SetRotation(pinRotations[i]);
+                }
+                else
+                    connectedGear.Animation_SetConnect(false);
+            }
             else
-                correctPins[i] = false;
+            {
+                correctChain = false;
+            }
         }
-        CheckCompleted();
+        if (correctChain)
+        {
+            endGear.SetBool("IsConnected", true);
+            PuzzleCompleted();
+        }
+
     }
 
-    private void CheckCompleted()
+    private void PuzzleCompleted()
     {
-        foreach (bool state in correctPins)
-        {
-            if(state == false)
-                return;
-        }
-        //All pins are correct
-        Debug.Log("Todos los pines estan correctos.");
+        Invoke("ActivateFade", 4.0f);
+        Invoke("LoadEndScene", 5.0f);
+    }
+
+    private void ActivateFade()
+    {
+        levelChanger.FadeToLevel();
+    }
+
+    private void LoadEndScene()
+    {
+        SceneManager.LoadScene("EndScreen");
     }
 }
