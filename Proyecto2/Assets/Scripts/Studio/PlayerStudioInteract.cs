@@ -14,7 +14,7 @@ public class PlayerStudioInteract : MonoBehaviour
 
   private void Start()
   {
-    transform.position = sceneInfo.PlayerStudioPos;
+    // transform.position = sceneInfo.PlayerStudioPos;
     LetterCanvas.enabled = false;
   }
   private void Update()
@@ -33,13 +33,13 @@ public class PlayerStudioInteract : MonoBehaviour
       if (collider.gameObject.name == "Letter")
       {
         audioSource.Play();
-        sceneInfo.PlayerStudioPos = transform.position;
+        // sceneInfo.PlayerStudioPos = transform.position;
         LetterCanvas.enabled = true;
       }
       else if (collider.gameObject.name == "Door")
       {
         collider.gameObject.GetComponent<AudioSource>().Play();
-        sceneInfo.PlayerStudioPos = transform.position;
+        // sceneInfo.PlayerStudioPos = transform.position;
         levelChanger.GetComponent<LevelChanger>().FadeToLevel();
         Invoke("LoadLobby", 1.1f);
       }
