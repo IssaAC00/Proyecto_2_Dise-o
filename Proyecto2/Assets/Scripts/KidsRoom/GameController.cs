@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private TilesController[] tiles;
     private int emptySpaceIndex = 8;
 
+
     [SerializeField]
     private SceneInfo sceneInfo;
 
@@ -63,7 +64,9 @@ public class GameController : MonoBehaviour
 
         if (correctTiles == tiles.Length - 1)
         {
-            sceneInfo.LobbyPuzzleCompleted = true;
+            GameObject bgMusic = GameObject.Find("BG_Music");
+            Destroy(bgMusic);
+            sceneInfo.KidsRoomPuzzleCompleted = true;
             Invoke("ActivateFade", 4.0f);
             Invoke("LoadRooomScene", 5.0f);
         }
