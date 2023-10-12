@@ -488,7 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followTransform: {fileID: 1402698382}
   roomBounds: {fileID: 1335491435}
-  offsetX: 0
+  offsetX: 2.5
 --- !u!1 &1030330583
 GameObject:
   m_ObjectHideFlags: 0
